@@ -9,6 +9,7 @@ public abstract class InsecureBankUtils {
 		long factor = (long) Math.pow(10, places);
 		value = value * factor;
 		long tmp = Math.round(value);
+		System.out.println(tmp);
 		return (double) tmp / factor;
 	}
 }

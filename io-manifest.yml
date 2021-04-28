@@ -1,0 +1,6 @@
+template: high-risk
+application:
+  projectLanguage: Java 
+  platformVersion: Java 8 
+  buildSystem: Maven  
+environment:

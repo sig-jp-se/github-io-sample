@@ -1,8 +1,8 @@
 application:
-  appId: github-io-sample
-  assetId: github-io-sample
+  appId:  Hanayama0317/github-io-sample
+  assetId: Hanayama0317/github-io-sample
   appType: Webapp
-  appName: github-io-sample
+  appName: Hanayama0317/github-io-sample
   release: major
   microservice: false
   projectLanguage: Java

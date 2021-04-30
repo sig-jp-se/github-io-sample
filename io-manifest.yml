@@ -21,19 +21,6 @@ security:
   pipeline:
     type: "Inline"
     toolchain: "Synopsys"
-  activities:
-    sast:
-      rescanThreshold: 10
-    sca:
-      rescanThreshold: 10
-    dast:
-      rescanThreshold: 10
-    sastplusm:
-      rescanThreshold: 10
-    dastplusm:
-      rescanThreshold: 10
-    imageScan:
-      rescanThreshold: 10
 connectors:
 - connector_name: slack
   fields:

@@ -38,16 +38,6 @@ security:
       rescanThreshold: 30
     imageScan:
       rescanThreshold: 10
-connectors:
-- connector_name: github
-  fields:
-    file_path: workflowengine-results.sarif.json
-    owner_name: 
-    repository_name: 
-    ref: 
-    commit_id: 
-    username: Hanayama0317
-    accesstoken: 
 buildbreaker:
 - activityname: sast
   status:
@@ -70,15 +60,15 @@ buildbreaker:
     severity: medium
 # for WF client
 tool_information:
-- tool_name: polaris
-  enabled: true
-  fields:
-    project_name: 
-    instance_url: 
-    auth_token: 
+# - tool_name: polaris
+#  enabled:  IS_SAST_ENABLED 
+#  fields:
+#    project_name:  POLARIS_PROJECT_NAME 
+#    instance_url:  POLARIS_SERVER_URL 
+#    auth_token:  POLARIS_ACCESS_TOKEN 
 - tool_name: blackduck
-  enabled: true
+  enabled:  IS_SCA_ENABLED 
   fields:
-    project_name: 
-    instance_url: 
-    auth_token: 
+    project_name:  BLACKDUCK_PROJECT_NAME 
+    instance_url:  BLACKDUCK_SERVER_URL 
+    auth_token:  BLACKDUCK_ACCESS_TOKEN 

@@ -1,17 +1,17 @@
 application:
-  appId:  Hanayama0317/github-io-sample
+  appId: Hanayama0317/github-io-sample
   assetId: Hanayama0317/github-io-sample
   appType: Webapp
   appName: Hanayama0317/github-io-sample
   release: major
   microservice: false
-  projectLanguage: Java
   platformVersion: Java 8
+  projectLanguage: Java
   buildSystem: Maven
   riskMatrixRevision: high-risk
-  sourceFilePattern: .*\+\+\+.*(\.java|\.jsp)+.*
-  sensitivePackagePattern: .*(\+\+\+.*(com\/example\/app)).*
-  fileChangeThreshold: 10
+  sourceFilePattern: ".*\\+\\+\\+.*(\\.java|\\.jsp)+.*"
+  sensitivePackagePattern: ".*(\\+\\+\\+.*(\\/((a|A)pp|(c|C)rypto|(a|A)uth|(s|S)ec|(l|L)ogin|(p|P)ass|(o|O)auth|(t|T)oken|(i|I)d|(c|C)red|(s|S)aml|(c|C)ognito|(s|S)ignin|(s|S)ignup|(a|A)ccess))).*"
+  fileChangeThreshold: 20
 environment:
   scm: github
   scmOwner: Hanayama0317
@@ -22,66 +22,85 @@ environment:
   githubToken: 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
 security:
   pipeline:
-    toolchain: "Synopsys"
+    type: Inline
+    toolchain: Synopsys
   activities:
     sast:
-      enabled: false
       rescanThreshold: 10
     sca:
-      enabled: false
-      rescanThreshold: 10
+      rescanThreshold: 100
     dast:
-      enabled: false
-      rescanThreshold: 20
+      rescanThreshold: 100
     sastplusm:
-      rescanThreshold: 30
+      rescanThreshold: 100
     dastplusm:
-      rescanThreshold: 30
-    imageScan:
-      rescanThreshold: 10
+      rescanThreshold: 100
+    dynamic:
+      rescanThreshold: 100
+connectors:
+- connector_name: slack
+  fields:
+    channelidentifier: C015LGE7RRQ
+    bearertoken: "<<SLACK_TOKEN>>"
+- connector_name: jira
+  fields:
+    issuetype: Bug
+    projectkey: STAR
+    assignee: test
+    url: "<<JIRA_SERVER_URL>>"
+    username: "<<JIRA_USERNAME>>"
+    authtoken: "<<JIRA_AUTH_TOKEN>>"
+- connector_name: bitbucket
+  fields:
+    workspace_name: sig-devsecops
+    repository_name: insecure-bank
+    commit_id: "<<BITBUCKET_COMMIT_ID>>"
+    username: "<<BITBUCKET_USERNAME>>"
+    app_password: "<<BITBUCKET_PASSWORD>>"
+- connector_name: github
+  fields:
+    file_path: workflowengine-results.sarif.json
+    owner_name: sig-devsecops
+    repository_name: insecure-bank
+    ref: refs/heads/master
+    commit_id: "<<GITHUB_COMMIT_ID>>"
+    username: "<<GITHUB_USERNAME>>"
+    accesstoken: "<<GITHUB_ACCESS_TOKEN>>"
 buildbreaker:
 - activityname: sast
   status:
   - new
   - open
   overallseverity:
-  - critical
+  - high
   categories:
-  - name: cross-site scripting
-    severity: high
-  - name: sql injection
-    severity: high
+  - name: Cross-site scripting
+  severity: |-
+    high
+    - name: SQL injection
 - activityname: sca
   status:
-  - new
+  - NEW
   overallseverity:
-  - critical
+  - HIGH
   categories:
   - name: cve-2015-2119
-    severity: medium
+  severity: MEDIUM
 tool_information:
-#- tool_name: coverity
-#  enabled:  IS_SAST_ENABLED 
-#  fields:
-#    file_path:  FILE_PATH 
-#- tool_name: polaris
-#  enabled:  IS_SAST_ENABLED 
-#  fields:
-#    project_name:  POLARIS_PROJECT_NAME 
-#    instance_url:  POLARIS_SERVER_URL 
-#    auth_token:  POLARIS_ACCESS_TOKEN 
 - tool_name: blackduck
-  enabled:  IS_SCA_ENABLED 
+  enabled: false
   fields:
-    project_name:  BLACKDUCK_PROJECT_NAME 
-    instance_url:  BLACKDUCK_SERVER_URL 
-    auth_token:  BLACKDUCK_ACCESS_TOKEN
-connectors:
-- connector_name: jira
+    project_name: POLARIS_PROJECT_NAME
+    project_version: '1.0'
+    instance_url: POLARIS_PROJECT_NAME
+    auth_token: POLARIS_PROJECT_NAME
+- tool_name: coverity
+  enabled: false
   fields:
-    issuetype: Bug
-    projectkey:  DMZ 
-    assignee:  JIRA_ASSIGNEE 
-    url:  JIRA_SERVER_URL 
-    username:  JIRA_USERNAME 
-    authtoken:  JIRA_AUTH_TOKEN 
+    file_path: coverity-results.json
+- tool_name: polaris
+  enabled: false
+  fields:
+    project_name: POLARIS_PROJECT_NAME
+    instance_url: POLARIS_PROJECT_NAME
+    auth_token: POLARIS_PROJECT_NAME

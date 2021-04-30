@@ -14,28 +14,13 @@ application:
   sensitivePackagePattern: <<SENSITIVE_PACKAGE_PATTERN>>
   fileChangeThreshold: <<FILE_CHANGE_THRESHOLD>>
 environment:
-  #scm: <<SCM_TYPE>>
-  #scmOwner: <<SCM_OWNER>>
-  #scmRepositoryName: <<SCM_REPO_NAME>>
-  #scmBranchName: <<SCM_BRANCH_NAME>>
-  #bitbucketUserName: <<BITBUCKET_USERNAME>>
-  #bitbucketPassword: <<BITBUCKET_PASSWORD>>
-  #bitbucketApiUrl: https://api.bitbucket.org/2.0/repositories/
-  githubApiUrl: https://github.com/Hanayama0317/insecure-bank.git
+  githubApiUrl: https://github.com/Hanayama0317/github-io-sample.git
   githubUsername: Hanayama0317
-  githubToken: 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
-  #gitlabHostUrl: <<GITLAB_HOST_URL>>
-  #gitlabToken: <<GITLAB_TOKEN>>
-  #jiraProjectName: <<JIRA_PROJECT_NAME>>
-  #jiraIssuesQuery: <<JIRA_ISSUES_QUERY>>
-  #jiraApiUrl: <<JIRA_API_URL>>
-  #jiraUserName: <<JIRA_USERNAME>>
-  #jiraAuthToken: <<JIRA_AUTH_TOKEN>>
+  githubToken: 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
 security:
   pipeline:
     type: "Inline"
     toolchain: "Synopsys"
-    runSonar: true
   activities:
     sast:
       rescanThreshold: 10

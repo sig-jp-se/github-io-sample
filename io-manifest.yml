@@ -1,0 +1,100 @@
+application:
+  appId: Hanayama0317/github-io-sample
+  assetId: Hanayama0317/github-io-sample
+  appType: Webapp
+  release: major
+  microservice: false
+  projectLanguage: Java
+  platformVersion: Java 8
+  buildSystem: Maven
+  riskMatrixRevision: default
+  sourceFilePattern: .*\+\+\+.*(\.java|\.jsp)+.*
+  sensitivePackagePattern: .*(\+\+\+.*(com\/example\/app)).*
+  fileChangeThreshold: 20
+environment:
+  scm: github
+  scmOwner: Hanayama0317
+  scmRepositoryName: github-io-sample
+  scmBranchName: master
+  bitbucketUserName: 
+  bitbucketPassword: 
+  bitbucketApiUrl: https://api.bitbucket.org/2.0/repositories/
+  githubApiUrl: https://api.github.com/repos/
+  githubUsername: Hanayama0317
+  githubToken: 
+  gitlabHostUrl: 
+  gitlabToken: 
+  jiraProjectName: 
+  jiraIssuesQuery: 
+  jiraApiUrl: 
+  jiraUserName: 
+  jiraAuthToken: 
+security:
+  activities:
+    sast:
+      rescanThreshold: 5
+    sca:
+      rescanThreshold: 5
+connectors:
+- connector_name: slack
+  fields:
+    channelidentifier: 
+    bearertoken: 
+- connector_name: jira
+  fields:
+    issuetype: Bug
+    projectkey: 
+    assignee: 
+    url: 
+    username: 
+    authtoken: 
+- connector_name: bitbucket
+  fields:
+    workspace_name: Hanayama0317
+    repository_name: github-io-sample
+    commit_id: 
+    username: 
+    app_password: 
+- connector_name: github
+  fields:
+    file_path: workflowengine-results.sarif.json
+    owner_name: 
+    repository_name: 
+    ref: 
+    commit_id: 
+    username: Hanayama0317
+    accesstoken: 
+buildbreaker:
+- activityname: sast
+  status:
+  - new
+  - open
+  overallseverity:
+  - high
+  categories:
+  - name: cross-site scripting
+    severity: high
+  - name: sql injection
+    severity: high
+- activityname: sca
+  status:
+  - new
+  overallseverity:
+  - high
+  categories:
+  - name: cve-2015-2119
+    severity: medium
+# for WF client
+tool_information:
+- tool_name: polaris
+  enabled: true
+  fields:
+    project_name: 
+    instance_url: 
+    auth_token: 
+- tool_name: blackduck
+  enabled: true
+  fields:
+    project_name: 
+    instance_url: 
+    auth_token: 

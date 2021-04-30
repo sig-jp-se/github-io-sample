@@ -2,6 +2,7 @@ application:
   appId: Hanayama0317/github-io-sample
   assetId: Hanayama0317/github-io-sample
   appType: Webapp
+  appName: Webapp
   release: major
   microservice: false
   projectLanguage: Java

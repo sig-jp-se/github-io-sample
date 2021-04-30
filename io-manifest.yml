@@ -45,7 +45,7 @@ buildbreaker:
   - new
   - open
   overallseverity:
-  - high
+  - critical
   categories:
   - name: cross-site scripting
     severity: high
@@ -55,7 +55,7 @@ buildbreaker:
   status:
   - new
   overallseverity:
-  - high
+  - critical
   categories:
   - name: cve-2015-2119
     severity: medium

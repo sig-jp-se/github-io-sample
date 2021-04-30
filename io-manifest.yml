@@ -4,7 +4,7 @@ application:
   appId: 1
   assetId: TESTAPP1
   appType: Financial
-  release: develop
+  release: major
   microservice: false
   projectLanguage: Java
   platformVersion: Java 8

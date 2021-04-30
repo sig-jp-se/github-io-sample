@@ -76,3 +76,16 @@ tool_information:
     project_name:  BLACKDUCK_PROJECT_NAME 
     instance_url:  BLACKDUCK_SERVER_URL 
     auth_token:  BLACKDUCK_ACCESS_TOKEN
+connectors:
+- connector_name: slack
+  fields:
+    channelidentifier:  SLACK_CHANNEL_ID 
+    bearertoken:  SLACK_TOKEN 
+- connector_name: jira
+  fields:
+    issuetype: Bug
+    projectkey:  JIRA_PROJECT_KEY 
+    assignee:  JIRA_ASSIGNEE 
+    url:  JIRA_SERVER_URL 
+    username:  JIRA_USERNAME 
+    authtoken:  JIRA_AUTH_TOKEN 

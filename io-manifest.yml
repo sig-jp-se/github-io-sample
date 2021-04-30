@@ -10,51 +10,35 @@ application:
   riskMatrixRevision: default
   sourceFilePattern: .*\+\+\+.*(\.java|\.jsp)+.*
   sensitivePackagePattern: .*(\+\+\+.*(com\/example\/app)).*
-  fileChangeThreshold: 20
+  fileChangeThreshold: 10
 environment:
   scm: github
   scmOwner: Hanayama0317
   scmRepositoryName: github-io-sample
   scmBranchName: master
-  bitbucketUserName: 
-  bitbucketPassword: 
-  bitbucketApiUrl: https://api.bitbucket.org/2.0/repositories/
   githubApiUrl: https://api.github.com/repos/
   githubUsername: Hanayama0317
-  githubToken: 
-  gitlabHostUrl: 
-  gitlabToken: 
-  jiraProjectName: 
-  jiraIssuesQuery: 
-  jiraApiUrl: 
-  jiraUserName: 
-  jiraAuthToken: 
+  githubToken: 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
 security:
+  pipeline:
+    toolchain: "Synopsys"
   activities:
     sast:
-      rescanThreshold: 5
+      enabled: false
+      rescanThreshold: 10
     sca:
-      rescanThreshold: 5
+      enabled: false
+      rescanThreshold: 10
+    dast:
+      enabled: false
+      rescanThreshold: 20
+    sastplusm:
+      rescanThreshold: 30
+    dastplusm:
+      rescanThreshold: 30
+    imageScan:
+      rescanThreshold: 10
 connectors:
-- connector_name: slack
-  fields:
-    channelidentifier: 
-    bearertoken: 
-- connector_name: jira
-  fields:
-    issuetype: Bug
-    projectkey: 
-    assignee: 
-    url: 
-    username: 
-    authtoken: 
-- connector_name: bitbucket
-  fields:
-    workspace_name: Hanayama0317
-    repository_name: github-io-sample
-    commit_id: 
-    username: 
-    app_password: 
 - connector_name: github
   fields:
     file_path: workflowengine-results.sarif.json

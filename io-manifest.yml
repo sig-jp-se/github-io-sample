@@ -8,7 +8,7 @@ application:
   projectLanguage: Java
   platformVersion: Java 8
   buildSystem: Maven
-  riskMatrixRevision: default
+  riskMatrixRevision: high-risk
   sourceFilePattern: .*\+\+\+.*(\.java|\.jsp)+.*
   sensitivePackagePattern: .*(\+\+\+.*(com\/example\/app)).*
   fileChangeThreshold: 10

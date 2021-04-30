@@ -59,7 +59,6 @@ buildbreaker:
   categories:
   - name: cve-2015-2119
     severity: medium
-# for WF client
 tool_information:
 - tool_name: coverity
   enabled:  IS_SAST_ENABLED 

@@ -75,4 +75,4 @@ tool_information:
 - tool_name: polaris
   enabled: false
   fields:
-    project_name: hanayama-demo/github-io-sample
+    project_name: Hanayama0317/github-io-sample

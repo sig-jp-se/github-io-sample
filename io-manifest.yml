@@ -79,3 +79,7 @@ tool_information:
     project_version: '1.0'
     instance_url: https://testing.blackduck.synopsys.com
     auth_token: NmIyNTdlMWItNGY2Yi00N2Q0LThkMGItNjU1Nzk5YTQ1ODEzOjlkODQ0OTE3LTFhMTYtNDk5MS04NDc0LTI5MDI0Mzk2ZTBkYw==
+- tool_name: polaris
+  enabled: false
+  fields:
+    project_name: hanayama-demo/github-io-sample

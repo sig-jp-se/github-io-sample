@@ -20,23 +20,21 @@ environment:
   githubApiUrl: https://api.github.com/repos/
 security:
   pipeline:
-    toolchain: "Synopsys"
+    type: Inline
+    toolchain: Synopsys
   activities:
     sast:
-      enabled: false
       rescanThreshold: 10
     sca:
-      enabled: false
-      rescanThreshold: 10
+      rescanThreshold: 100
     dast:
-      enabled: false
-      rescanThreshold: 20
+      rescanThreshold: 100
     sastplusm:
-      rescanThreshold: 30
+      rescanThreshold: 100
     dastplusm:
-      rescanThreshold: 30
-    imageScan:
-      rescanThreshold: 10
+      rescanThreshold: 100
+    dynamic:
+      rescanThreshold: 100
 buildbreaker:
 - activityname: sast
   status:

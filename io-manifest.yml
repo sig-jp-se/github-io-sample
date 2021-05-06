@@ -1,17 +1,17 @@
 application:
-  appId:  Hanayama0317/github-io-sample
+  appId: Hanayama0317/github-io-sample
   assetId: Hanayama0317/github-io-sample
   appType: Webapp
   appName: Hanayama0317/github-io-sample
   release: major
   microservice: false
-  projectLanguage: Java
   platformVersion: Java 8
+  projectLanguage: Java
   buildSystem: Maven
   riskMatrixRevision: high-risk
-  sourceFilePattern: .*\+\+\+.*(\.java|\.jsp)+.*
-  sensitivePackagePattern: .*(\+\+\+.*(com\/example\/app)).*
-  fileChangeThreshold: 10
+  sourceFilePattern: ".*\\+\\+\\+.*(\\.java|\\.jsp)+.*"
+  sensitivePackagePattern: ".*(\\+\\+\\+.*(\\/((a|A)pp|(c|C)rypto|(a|A)uth|(s|S)ec|(l|L)ogin|(p|P)ass|(o|O)auth|(t|T)oken|(i|I)d|(c|C)red|(s|S)aml|(c|C)ognito|(s|S)ignin|(s|S)ignup|(a|A)ccess))).*"
+  fileChangeThreshold: 20
 environment:
   scm: github
   scmOwner: Hanayama0317

@@ -18,8 +18,6 @@ environment:
   scmRepositoryName: github-io-sample
   scmBranchName: master
   githubApiUrl: https://api.github.com/repos/
-  githubUsername: Hanayama0317
-  githubToken: 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
 security:
   pipeline:
     toolchain: "Synopsys"

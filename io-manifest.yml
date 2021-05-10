@@ -44,6 +44,9 @@ connectors:
     url: "<<JIRA_SERVER_URL>>"
     username: "<<JIRA_USERNAME>>"
     authtoken: "<<JIRA_AUTH_TOKEN>>"
+- connector_name: github
+  fields:
+    file_path: workflowengine-results.sarif.json
 buildbreaker:
 - activityname: sast
   status:

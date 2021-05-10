@@ -66,14 +66,14 @@ buildbreaker:
   severity: MEDIUM
 tool_information:
 - tool_name: blackduck
-  enabled: false
+  enabled: true
   fields:
     project_name: github-io-sample:1.0
     project_version: '1.0'
     instance_url: https://testing.blackduck.synopsys.com
     auth_token: NmIyNTdlMWItNGY2Yi00N2Q0LThkMGItNjU1Nzk5YTQ1ODEzOjlkODQ0OTE3LTFhMTYtNDk5MS04NDc0LTI5MDI0Mzk2ZTBkYw==
 - tool_name: polaris
-  enabled: false
+  enabled: true
   fields:
     project_name: Hanayama0317/github-io-sample
     instance_url: https://sipse.polaris.synopsys.com

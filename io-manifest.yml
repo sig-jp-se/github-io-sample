@@ -65,16 +65,15 @@ buildbreaker:
   - name: cve-2015-2119
   severity: MEDIUM
 tool_information:
-- tool_name: blackduck
-  enabled: true
-  fields:
-    project_name: github-io-sample:1.0
-    project_version: '1.0'
-    instance_url: https://testing.blackduck.synopsys.com
-    auth_token: NmIyNTdlMWItNGY2Yi00N2Q0LThkMGItNjU1Nzk5YTQ1ODEzOjlkODQ0OTE3LTFhMTYtNDk5MS04NDc0LTI5MDI0Mzk2ZTBkYw==
 - tool_name: polaris
-  enabled: true
+  enabled: <<IS_SAST_ENABLED>>
   fields:
-    project_name: Hanayama0317/github-io-sample
-    instance_url: https://sipse.polaris.synopsys.com
-    auth_token: hcngi4pfgd03v8ha0dameta2t49mvi70ckdnjnu29pj0ij32pb30
+    project_name: <<POLARIS_PROJECT_NAME>>
+    instance_url: <<POLARIS_SERVER_URL>>
+    auth_token: <<POLARIS_ACCESS_TOKEN>>
+- tool_name: blackduck
+  enabled: <<IS_SCA_ENABLED>>
+  fields:
+    project_name: <<BLACKDUCK_PROJECT_NAME>>
+    instance_url: <<BLACKDUCK_SERVER_URL>>
+    auth_token: <<BLACKDUCK_ACCESS_TOKEN>>

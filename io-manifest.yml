@@ -76,3 +76,5 @@ tool_information:
   enabled: false
   fields:
     project_name: Hanayama0317/github-io-sample
+    instance_url: https://sipse.polaris.synopsys.com
+    auth_token: hcngi4pfgd03v8ha0dameta2t49mvi70ckdnjnu29pj0ij32pb30

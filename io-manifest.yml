@@ -36,6 +36,10 @@ security:
     dynamic:
       rescanThreshold: 100
 connectors:
+- connector_name: slack
+  fields:
+    channelidentifier: <<SLACK_CHANNEL_ID>>
+    bearertoken: <<SLACK_TOKEN>>
 - connector_name: jira
   fields:
     issuetype: Bug

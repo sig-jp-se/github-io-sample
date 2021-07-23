@@ -22,19 +22,6 @@ security:
   pipeline:
     type: Inline
     toolchain: Synopsys
-  activities:
-    sast:
-      rescanThreshold: 10
-    sca:
-      rescanThreshold: 100
-    dast:
-      rescanThreshold: 100
-    sastplusm:
-      rescanThreshold: 100
-    dastplusm:
-      rescanThreshold: 100
-    dynamic:
-      rescanThreshold: 100
 connectors:
 - connector_name: slack
   fields:

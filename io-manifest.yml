@@ -1,8 +1,8 @@
 application:
-  appId: sig-jp-se/github-io-sample
-  assetId: sig-jp-se/github-io-sample
+  appId: Hanayama0317/github-io-sample
+  assetId: Hanayama0317/github-io-sample
   appType: Webapp
-  appName: sig-jp-se/github-io-sample
+  appName: Hanayama0317/github-io-sample
   release: major
   microservice: false
   platformVersion: Java 8
@@ -14,7 +14,7 @@ application:
   fileChangeThreshold: 20
 environment:
   scm: github
-  scmOwner: sig-jp-se
+  scmOwner: Hanayama0317
   scmRepositoryName: github-io-sample
   scmBranchName: master
   githubApiUrl: https://api.github.com/repos/
